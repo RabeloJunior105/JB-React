@@ -23,7 +23,7 @@ import Login from "views/examples/Login.jsx";
 import Tables from "views/examples/Tables.jsx";
 import Icons from "views/examples/Icons.jsx";
 
-var routes = [
+const routes = [
   {
     path: "/index",
     name: "Dashboard",

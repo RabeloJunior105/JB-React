@@ -1,27 +1,10 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React from 'react';
 // node.js library that concatenates classes (strings)
-import classnames from "classnames";
+import classnames from 'classnames';
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import Chart from 'chart.js';
 // react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
+import { Line, Bar } from 'react-chartjs-2';
 // reactstrap components
 import {
   Button,
@@ -35,43 +18,45 @@ import {
   Table,
   Container,
   Row,
-  Col
-} from "reactstrap";
+  Col,
+} from 'reactstrap';
 
 // core components
+import Header from '../components/Headers/Header';
 import {
   chartOptions,
   parseOptions,
   chartExample1,
-  chartExample2
-} from "variables/charts.jsx";
-
-import Header from "components/Headers/Header.jsx";
+  chartExample2,
+} from '../variables/charts';
 
 class Index extends React.Component {
   state = {
     activeNav: 1,
-    chartExample1Data: "data1"
+    chartExample1Data: 'data1',
   };
+
   toggleNavs = (e, index) => {
     e.preventDefault();
     this.setState({
       activeNav: index,
       chartExample1Data:
-        this.state.chartExample1Data === "data1" ? "data2" : "data1"
+        this.state.chartExample1Data === 'data1' ? 'data2' : 'data1',
     });
-    let wow = () => {
+    const wow = () => {
       console.log(this.state);
     };
     wow.bind(this);
     setTimeout(() => wow(), 1000);
     // this.chartReference.update();
   };
+
   componentWillMount() {
     if (window.Chart) {
       parseOptions(Chart, chartOptions());
     }
   }
+
   render() {
     return (
       <>
@@ -93,8 +78,8 @@ class Index extends React.Component {
                       <Nav className="justify-content-end" pills>
                         <NavItem>
                           <NavLink
-                            className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 1
+                            className={classnames('py-2 px-3', {
+                              active: this.state.activeNav === 1,
                             })}
                             href="#pablo"
                             onClick={e => this.toggleNavs(e, 1)}
@@ -105,8 +90,8 @@ class Index extends React.Component {
                         </NavItem>
                         <NavItem>
                           <NavLink
-                            className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 2
+                            className={classnames('py-2 px-3', {
+                              active: this.state.activeNav === 2,
                             })}
                             data-toggle="tab"
                             href="#pablo"
@@ -191,7 +176,7 @@ class Index extends React.Component {
                       <td>4,569</td>
                       <td>340</td>
                       <td>
-                        <i className="fas fa-arrow-up text-success mr-3" />{" "}
+                        <i className="fas fa-arrow-up text-success mr-3" />{' '}
                         46,53%
                       </td>
                     </tr>
@@ -200,7 +185,7 @@ class Index extends React.Component {
                       <td>3,985</td>
                       <td>319</td>
                       <td>
-                        <i className="fas fa-arrow-down text-warning mr-3" />{" "}
+                        <i className="fas fa-arrow-down text-warning mr-3" />{' '}
                         46,53%
                       </td>
                     </tr>
@@ -209,7 +194,7 @@ class Index extends React.Component {
                       <td>3,513</td>
                       <td>294</td>
                       <td>
-                        <i className="fas fa-arrow-down text-warning mr-3" />{" "}
+                        <i className="fas fa-arrow-down text-warning mr-3" />{' '}
                         36,49%
                       </td>
                     </tr>
@@ -218,7 +203,7 @@ class Index extends React.Component {
                       <td>2,050</td>
                       <td>147</td>
                       <td>
-                        <i className="fas fa-arrow-up text-success mr-3" />{" "}
+                        <i className="fas fa-arrow-up text-success mr-3" />{' '}
                         50,87%
                       </td>
                     </tr>
@@ -227,7 +212,7 @@ class Index extends React.Component {
                       <td>1,795</td>
                       <td>190</td>
                       <td>
-                        <i className="fas fa-arrow-down text-danger mr-3" />{" "}
+                        <i className="fas fa-arrow-down text-danger mr-3" />{' '}
                         46,53%
                       </td>
                     </tr>
